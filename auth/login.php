@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h2>🏠 <?php echo SITE_NAME; ?></h2>
             </div>
             <div class="nav-links">
-                <a href="../index.php">Home</a>
+                <a href="../index.html">Home</a>
                 <a href="register.php">Register</a>
             </div>
         </div>
