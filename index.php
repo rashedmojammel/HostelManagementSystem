@@ -1,0 +1,112 @@
+<?php
+// =============================================
+// Home Page - Hostel Management System
+// =============================================
+
+require_once 'includes/config.php';
+require_once 'includes/functions.php';
+
+// Redirect to appropriate dashboard if logged in
+if (isLoggedIn()) {
+    $role = $_SESSION['role'];
+    header("Location: $role/dashboard.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo SITE_NAME; ?> - Home</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>🏠 <?php echo SITE_NAME; ?></h2>
+            </div>
+            <div class="nav-links">
+                <a href="auth/login.php" class="btn btn-primary">Login</a>
+                <a href="auth/register.php" class="btn btn-secondary">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to Hostel Management System</h1>
+                <p>Manage your hostel operations efficiently with our comprehensive system</p>
+                <div class="hero-buttons">
+                    <a href="auth/login.php" class="btn btn-large btn-primary">Get Started</a>
+                    <a href="auth/register.php" class="btn btn-large btn-secondary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍💼</div>
+                    <h3>Admin Panel</h3>
+                    <p>Complete control over students, rooms, bookings, payments, and complaints</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🧑‍💼</div>
+                    <h3>Manager Dashboard</h3>
+                    <p>Manage daily operations, complaints, meals, and room maintenance</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Student Portal</h3>
+                    <p>Book rooms, submit complaints, view meals, and manage payments</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Room Management</h3>
+                    <p>Track room availability, bookings, and maintenance status</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Payment Tracking</h3>
+                    <p>Monitor payment status and transaction history</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📢</div>
+                    <h3>Events & Meals</h3>
+                    <p>Stay updated with hostel events and daily meal schedules</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 <?php echo SITE_NAME; ?>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
