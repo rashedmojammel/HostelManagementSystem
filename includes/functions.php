@@ -1,14 +1,9 @@
 <?php
-// =============================================
-// Common Functions for Hostel Management System
-// =============================================
 
-// Include configuration
+
+
 require_once 'config.php';
 
-// =============================================
-// Authentication Functions
-// =============================================
 
 /**
  * Check if user is logged in

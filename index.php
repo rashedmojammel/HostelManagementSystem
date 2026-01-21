@@ -38,7 +38,7 @@ if (isLoggedIn()) {
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Welcome to Hostel Management System</h1>
+                <h1>Welcome to CampusNest</h1>
                 <p>Manage your hostel operations efficiently with our comprehensive system</p>
                 <div class="hero-buttons">
                     <a href="auth/login.php" class="btn btn-large btn-primary">Get Started</a>
@@ -101,7 +101,7 @@ if (isLoggedIn()) {
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 <?php echo SITE_NAME; ?>. All rights reserved.</p>
+            <p>&copy; 2026 <?php echo SITE_NAME; ?>. All rights reserved. Owner Rashedul alam</p>
         </div>
     </footer>
 

@@ -1,17 +1,13 @@
 <?php
-// =============================================
-// Student Dashboard
-// =============================================
 
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
 
-// Check if user is logged in and is student
+
 requireRole('student');
 
 $student_id = $_SESSION['user_id'];
 
-// Get dashboard statistics
 $my_bookings = getCount('bookings', "student_id = $student_id");
 $active_bookings = getCount('bookings', "student_id = $student_id AND status = 'approved'");
 $my_complaints = getCount('complaints', "student_id = $student_id");

@@ -1,15 +1,11 @@
 <?php
-// =============================================
-// Student - View Available Rooms
-// =============================================
+
 
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
 
-// Check if user is logged in and is student
 requireRole('student');
 
-// Get all available rooms
 $sql = "SELECT * FROM rooms WHERE status = 'available' ORDER BY room_number ASC";
 $rooms = mysqli_query($conn, $sql);
 ?>

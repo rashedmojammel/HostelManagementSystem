@@ -1,15 +1,10 @@
 <?php
-// =============================================
-// Manager - Profile Management
-// =============================================
 
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
 
-// Check if user is logged in and is manager
 requireRole('manager');
 
-// Get current user data
 $user = getUserById($_SESSION['user_id']);
 
 // Handle profile update

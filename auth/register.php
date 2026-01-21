@@ -1,7 +1,5 @@
 <?php
-// =============================================
-// Registration Page
-// =============================================
+
 
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
@@ -80,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h2>🏠 <?php echo SITE_NAME; ?></h2>
             </div>
             <div class="nav-links">
-                <a href="../index.html">Home</a>
+                <a href="../index.php">Home</a>
                 <a href="login.php">Login</a>
             </div>
         </div>
@@ -97,14 +95,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!-- Full Name -->
             <div class="form-group">
                 <label for="full_name">Full Name *</label>
-                <input type="text" id="full_name" name="full_name" required 
+                <input type="text" id="full_name" name="full_name"placeholder="Full name"  required 
                        value="<?php echo isset($_POST['full_name']) ? htmlspecialchars($_POST['full_name']) : ''; ?>">
             </div>
             
             <!-- Email -->
             <div class="form-group">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required
+                <input type="email" id="email" name="email" placeholder="Email" required
                        value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
             </div>
             
@@ -118,14 +116,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!-- Password -->
             <div class="form-group">
                 <label for="password">Password *</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="Password"  required>
                 <small style="color: #7f8c8d;">Minimum 6 characters</small>
             </div>
             
             <!-- Confirm Password -->
             <div class="form-group">
                 <label for="confirm_password">Confirm Password *</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password"  required>
             </div>
             
             <!-- Submit Button -->

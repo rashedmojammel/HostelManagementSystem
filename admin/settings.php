@@ -1,7 +1,5 @@
 <?php
-// =============================================
-// Admin - Settings (Profile & Password)
-// =============================================
+
 
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
