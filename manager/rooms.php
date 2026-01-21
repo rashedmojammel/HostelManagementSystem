@@ -25,7 +25,7 @@ if (isset($_POST['update_status'])) {
     exit();
 }
 
-// Get all rooms
+// Get all rooms here
 $sql = "SELECT * FROM rooms ORDER BY room_number ASC";
 $rooms = mysqli_query($conn, $sql);
 ?>
@@ -39,7 +39,7 @@ $rooms = mysqli_query($conn, $sql);
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation bar -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
