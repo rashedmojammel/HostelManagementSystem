@@ -8,7 +8,6 @@ A role-based Hostel Management System built with PHP, MySQL, HTML, CSS, and Java
 - Login / Register / Logout
 - Password reset
 - Session-based access control (role protection)
-- Optional “Remember me” cookie (if enabled in your login code)
 
 ### Admin Module
 - Dashboard overview (counts/stats)
