@@ -25,7 +25,7 @@ if (isset($_POST['update_status'])) {
     exit();
 }
 
-// Get all rooms here
+// Get all rooms
 $sql = "SELECT * FROM rooms ORDER BY room_number ASC";
 $rooms = mysqli_query($conn, $sql);
 ?>

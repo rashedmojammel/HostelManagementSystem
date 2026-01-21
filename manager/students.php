@@ -7,7 +7,7 @@ require_once '../includes/functions.php';
 // Check if user is logged in and is manager
 requireRole('manager');
 
-// Get all students
+// Get all students 
 $sql = "SELECT * FROM users WHERE role = 'student' ORDER BY full_name ASC";
 $students = mysqli_query($conn, $sql);
 ?>

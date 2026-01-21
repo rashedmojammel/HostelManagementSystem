@@ -1,6 +1,6 @@
 <?php
 // =============================================
-// Manager - Bookings Management
+// Manager-Bookings Management
 // =============================================
 
 require_once '../includes/config.php';
@@ -45,7 +45,7 @@ $bookings = mysqli_query($conn, $sql);
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <!-- Navigation bar -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">

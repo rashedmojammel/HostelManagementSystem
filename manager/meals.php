@@ -38,7 +38,7 @@ if (isset($_POST['add_meal'])) {
     exit();
 }
 
-// Handle meal update
+// Handle meal update section
 if (isset($_POST['update_meal'])) {
     $meal_id = intval($_POST['meal_id']);
     $meal_date = sanitizeInput($_POST['meal_date']);

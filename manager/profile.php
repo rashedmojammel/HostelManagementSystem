@@ -7,7 +7,7 @@ requireRole('manager');
 
 $user = getUserById($_SESSION['user_id']);
 
-// Handle profile update
+// Handle profile update 
 if (isset($_POST['update_profile'])) {
     $full_name = sanitizeInput($_POST['full_name']);
     $email = sanitizeInput($_POST['email']);
