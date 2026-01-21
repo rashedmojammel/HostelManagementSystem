@@ -1,7 +1,10 @@
 <?php
+<<<<<<< HEAD
 // =============================================
 // Manager-Bookings Management
 // =============================================
+=======
+>>>>>>> 6b93f3740aca234ffe1e3c00ada0407a3935908e
 
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
