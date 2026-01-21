@@ -1,4 +1,4 @@
-# Hostel Management System (PHP + MySQL)
+# Hostel Management System - CampusNest
 
 A role-based Hostel Management System built with PHP, MySQL, HTML, CSS, and JavaScript. It supports Admin, Manager, and Student dashboards with authentication, booking, payments, complaints, and events management.
 
@@ -123,7 +123,4 @@ It supports three user roles (**Admin**, **Manager**, **Student**) with separate
 - Input validation + basic sanitization
 - Optional “Remember Me” cookie (if enabled)
 
----
-
-## Project Structure
 
