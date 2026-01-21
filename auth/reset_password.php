@@ -4,7 +4,6 @@
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
 
-// Process password reset
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = sanitizeInput($_POST['email']);
     $new_password = $_POST['new_password'];
@@ -18,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (strlen($new_password) < 6) {
         setErrorMessage('Password must be at least 6 characters');
     } else {
-        // Check if email exists
+       
         $sql = "SELECT user_id FROM users WHERE email = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "s", $email);
@@ -26,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = mysqli_stmt_get_result($stmt);
         
         if ($user = mysqli_fetch_assoc($result)) {
-            // Update password
+            
             $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
             $sql = "UPDATE users SET password = ? WHERE user_id = ?";
             $stmt = mysqli_prepare($conn, $sql);

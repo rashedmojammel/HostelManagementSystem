@@ -4,14 +4,12 @@
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
 
-// Redirect if already logged in
 if (isLoggedIn()) {
     $role = $_SESSION['role'];
     header("Location: ../$role/dashboard.php");
     exit();
 }
 
-// Process registration form
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $full_name = sanitizeInput($_POST['full_name']);
     $email = sanitizeInput($_POST['email']);
@@ -20,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $confirm_password = $_POST['confirm_password'];
     $role = 'student'; // Default role for registration
     
-    // Validate inputs
     if (empty($full_name) || empty($email) || empty($phone) || empty($password)) {
         setErrorMessage('Please fill in all fields');
     } elseif (!validateEmail($email)) {
@@ -32,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif ($password !== $confirm_password) {
         setErrorMessage('Passwords do not match');
     } else {
-        // Check if email already exists
-        $sql = "SELECT user_id FROM users WHERE email = ?";
+
+    $sql = "SELECT user_id FROM users WHERE email = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
@@ -42,10 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (mysqli_num_rows($result) > 0) {
             setErrorMessage('Email already registered');
         } else {
-            // Hash password
+            
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             
-            // Insert new user
             $sql = "INSERT INTO users (full_name, email, phone, password, role) VALUES (?, ?, ?, ?, ?)";
             $stmt = mysqli_prepare($conn, $sql);
             mysqli_stmt_bind_param($stmt, "sssss", $full_name, $email, $phone, $hashed_password, $role);
@@ -71,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
+    
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">

@@ -4,23 +4,23 @@
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
 
-// Redirect if already logged in
+
 if (isLoggedIn()) {
     $role = $_SESSION['role'];
     header("Location: ../$role/dashboard.php");
     exit();
 }
 
-// Process login form
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = sanitizeInput($_POST['email']);
     $password = $_POST['password'];
     
-    // Validate inputs
+
     if (empty($email) || empty($password)) {
         setErrorMessage('Please fill in all fields');
     } else {
-        // Check user credentials
+        
         $sql = "SELECT * FROM users WHERE email = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "s", $email);
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = mysqli_stmt_get_result($stmt);
         
         if ($user = mysqli_fetch_assoc($result)) {
-            // Verify password
+           
             if (password_verify($password, $user['password'])) {
                 // Check if account is active
                 if ($user['status'] === 'blocked') {
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
+ 
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
