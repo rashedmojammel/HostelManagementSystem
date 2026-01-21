@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = mysqli_stmt_get_result($stmt);
         
         if ($user = mysqli_fetch_assoc($result)) {
-           
+            // Verify password
             if (password_verify($password, $user['password'])) {
                 // Check if account is active
                 if ($user['status'] === 'blocked') {
