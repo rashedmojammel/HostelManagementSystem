@@ -51,7 +51,7 @@ $complaints = mysqli_stmt_get_result($stmt);
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation bar -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">

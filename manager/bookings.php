@@ -24,7 +24,7 @@ if (isset($_GET['confirm']) && isset($_GET['id'])) {
     exit();
 }
 
-// Get all bookings
+// Get all bookings part
 $sql = "SELECT b.*, u.full_name, u.email, u.phone, r.room_number, r.room_type, r.price 
         FROM bookings b 
         JOIN users u ON b.student_id = u.user_id 
@@ -42,7 +42,7 @@ $bookings = mysqli_query($conn, $sql);
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation bar -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">

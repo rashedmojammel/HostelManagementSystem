@@ -13,7 +13,7 @@ if (isset($_POST['add_meal'])) {
     $menu_items = sanitizeInput($_POST['menu_items']);
     $added_by = $_SESSION['user_id'];
     
-    // Check if meal already exists for this date and type
+    // Check if meal already exists for this date and type.
     $sql_check = "SELECT meal_id FROM meals WHERE meal_date = ? AND meal_type = ?";
     $stmt_check = mysqli_prepare($conn, $sql_check);
     mysqli_stmt_bind_param($stmt_check, "ss", $meal_date, $meal_type);
