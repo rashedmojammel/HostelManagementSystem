@@ -39,7 +39,7 @@ function requireLogin() {
 function requireRole($role) {
     requireLogin();
     if (!hasRole($role)) {
-        header('Location: ' . SITE_URL . '/index.php');
+        header('Location: ' . SITE_URL . '/index.html');
         exit();
     }
 }
