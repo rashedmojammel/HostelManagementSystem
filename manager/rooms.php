@@ -39,7 +39,7 @@ $rooms = mysqli_query($conn, $sql);
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation bar -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">

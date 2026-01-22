@@ -24,7 +24,7 @@ mysqli_stmt_bind_param($stmt, "i", $manager_id);
 mysqli_stmt_execute($stmt);
 $recent_complaints = mysqli_stmt_get_result($stmt);
 
-// Get recent bookings
+// Get recent bookings 
 $sql = "SELECT b.*, u.full_name, r.room_number, r.room_type 
         FROM bookings b 
         JOIN users u ON b.student_id = u.user_id 
