@@ -120,6 +120,6 @@ It supports three user roles (**Admin**, **Manager**, **Student**) with separate
 - Session-based authentication + role-based access control
 - Password hashing (recommended: `password_hash()` / `password_verify()`)
 - Input validation + basic sanitization
-- Optional “Remember Me” cookie (if enabled)
+- Optional “Remember Me” cookie (if enabled) !!
 
 
